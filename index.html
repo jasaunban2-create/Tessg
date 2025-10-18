@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝗣𝗔𝗬𝗠𝗘𝗡𝗧 𝗞𝗬𝗬𝗪𝗘 - 𝗠𝗘𝗧𝗢𝗗𝗘 𝗣𝗘𝗠𝗕𝗔𝗬𝗔𝗥𝗔𝗡</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .payment-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .payment-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .payment-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .dana {
+            background: linear-gradient(135deg, #00a3ff, #0081cc);
+        }
+
+        .gopay {
+            background: linear-gradient(135deg, #00aa13, #008a0f);
+        }
+
+        .qris {
+            background: linear-gradient(135deg, #ff6b00, #ff3c00);
+        }
+
+        .payment-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .payment-details {
+            margin-top: 15px;
+        }
+
+        .payment-info {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .qris-image {
+            width: 100%;
+            max-width: 250px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .note {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.1rem;
+            border-left: 4px solid #ffcc00;
+        }
+
+        .note i {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .payment-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://files.catbox.moe/utqz8b.jpg" alt="Logo Payment">
+            </div>
+            <h1>Payment Gateway</h1>
+            <p class="subtitle">Pilih metode pembayaran yang tersedia</p>
+        </header>
+
+        <section class="payment-section">
+            <!-- Dana Payment -->
+            <div class="payment-card">
+                <div class="payment-header">
+                    <div class="payment-icon dana">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h2 class="payment-title">DANA</h2>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <div class="info-label">Nomor Telepon</div>
+                        <div class="info-value">087874744351</div>
+                        <button class="copy-btn" onclick="copyToClipboard('087874744351')">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+                    <div class="payment-info">
+                        <div class="info-label">Atas Nama</div>
+                        <div class="info-value">INA WAHYUNI</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GoPay Payment -->
+            <div class="payment-card">
+                <div class="payment-header">
+                    <div class="payment-icon gopay">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h2 class="payment-title">GoPay</h2>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <div class="info-label">Nomor Telepon</div>
+                        <div class="info-value">081574757113</div>
+                        <button class="copy-btn" onclick="copyToClipboard('081574757113')">
+                            <i class="fas fa-copy"></i> Salin Nomor
+                        </button>
+                    </div>
+                    <div class="payment-info">
+                        <div class="info-label">Atas Nama</div>
+                        <div class="info-value">FAHRI</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QRIS Payment -->
+            <div class="payment-card">
+                <div class="payment-header">
+                    <div class="payment-icon qris">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h2 class="payment-title">QRIS</h2>
+                </div>
+                <div class="payment-details">
+                    <div class="payment-info">
+                        <div class="info-label">Scan QR Code</div>
+                        <img src="https://files.catbox.moe/l82nhi.jpg" alt="QR Code" class="qris-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="note">
+            <i class="fas fa-info-circle"></i>
+            <strong>Penting:</strong> Jika ada yang transfer, jangan pakai biaya admin. Pastikan nominal transfer sesuai dengan yang diminta.
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Payment Gateway. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fungsi untuk menyalin teks ke clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Nomor berhasil disalin: ' + text);
+            }, function(err) {
+                console.error('Gagal menyalin teks: ', err);
+            });
+        }
+
+        // Animasi untuk elemen saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.payment-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
